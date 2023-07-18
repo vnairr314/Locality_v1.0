@@ -17,7 +17,7 @@ struct MapView: View {
         ZStack(alignment: .top) {
             
             if !isShowingSearchView {
-                MapViewRepresentable(mapView: mapViewModel.mapView, locationManager: mapViewModel.locationManager)
+                MapViewRepresentable(mapView: $mapViewModel.mapView, region: $mapViewModel.region, locationManager: mapViewModel.locationManager)
                     .ignoresSafeArea()
                 
                 LocationSearchButton(isShowingSearchView: $isShowingSearchView)

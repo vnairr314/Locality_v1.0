@@ -25,12 +25,12 @@ struct LocationSearchView: View {
                 }
                 
                 TextField("Search here", text: $searchText)
-                    .foregroundColor(Color(.darkGray))
+                    .foregroundColor(.secondary)
                     .font(.subheadline)
                     .padding(.vertical, 5)
+                    .background(Color(UIColor.systemBackground))
                     .background(
-                        RoundedRectangle(cornerRadius: 15).fill(Color(UIColor.systemBackground))
-                    )
+                        RoundedRectangle(cornerRadius: 15))
                 
                 Spacer()
             }
