@@ -18,6 +18,7 @@
 		834E9B732A66EE73006CBA5C /* MapViewAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834E9B722A66EE73006CBA5C /* MapViewAction.swift */; };
 		834E9B752A66EF57006CBA5C /* LocationSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834E9B742A66EF57006CBA5C /* LocationSearchView.swift */; };
 		834E9B772A66F48E006CBA5C /* LocationSearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834E9B762A66F48E006CBA5C /* LocationSearchResultCell.swift */; };
+		834E9B7A2A686CE3006CBA5C /* LocationSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834E9B792A686CE3006CBA5C /* LocationSearchModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		834E9B722A66EE73006CBA5C /* MapViewAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewAction.swift; sourceTree = "<group>"; };
 		834E9B742A66EF57006CBA5C /* LocationSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchView.swift; sourceTree = "<group>"; };
 		834E9B762A66F48E006CBA5C /* LocationSearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchResultCell.swift; sourceTree = "<group>"; };
+		834E9B792A686CE3006CBA5C /* LocationSearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				834E9B5A2A65AE4A006CBA5C /* Locality_v1_0App.swift */,
+				834E9B782A686CD8006CBA5C /* Model */,
 				834E9B6D2A65D286006CBA5C /* Views */,
 				834E9B6A2A65D164006CBA5C /* Extensions */,
 				834E9B5E2A65AE4D006CBA5C /* Assets.xcassets */,
@@ -102,6 +105,14 @@
 				834E9B762A66F48E006CBA5C /* LocationSearchResultCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		834E9B782A686CD8006CBA5C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				834E9B792A686CE3006CBA5C /* LocationSearchModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,6 +189,7 @@
 				834E9B5D2A65AE4A006CBA5C /* ContentView.swift in Sources */,
 				834E9B732A66EE73006CBA5C /* MapViewAction.swift in Sources */,
 				834E9B6F2A65D2D9006CBA5C /* LocationManager.swift in Sources */,
+				834E9B7A2A686CE3006CBA5C /* LocationSearchModel.swift in Sources */,
 				834E9B692A65D129006CBA5C /* MapView.swift in Sources */,
 				834E9B752A66EF57006CBA5C /* LocationSearchView.swift in Sources */,
 				834E9B772A66F48E006CBA5C /* LocationSearchResultCell.swift in Sources */,

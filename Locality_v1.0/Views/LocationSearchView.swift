@@ -12,6 +12,8 @@ struct LocationSearchView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Binding var isShowingSearchView: Bool
     @State private var searchText = ""
+    @StateObject var viewModel = LocationSearchModel()
+    @State private var isTextFieldInFocus = false
     
     var body: some View {
         
@@ -21,23 +23,27 @@ struct LocationSearchView: View {
                 Button(action: { isShowingSearchView = false }) {
                     Image(systemName: "chevron.backward")
                         .symbolVariant(.fill)
-                    .padding(.horizontal)
+                        .padding(.horizontal)
                 }
                 
-                TextField("Search here", text: $searchText)
-                    .foregroundColor(.secondary)
+                TextField("Search here", text: $viewModel.queryFragment)
+                    .foregroundColor(Color(.label))
                     .font(.subheadline)
                     .padding(.vertical, 5)
                     .background(Color(UIColor.systemBackground))
                     .background(
-                        RoundedRectangle(cornerRadius: 15))
+                        RoundedRectangle(cornerRadius: 15).fill(Color.white))
+                    .focusable(isTextFieldInFocus)
+                    .onAppear {
+                        isTextFieldInFocus = true
+                    }
                 
                 Spacer()
             }
             .frame(width: UIScreen.main.bounds.width - 44, height: 50)
             .background(
                 RoundedRectangle(cornerRadius: 15)
-                    .fill(Color.white)
+                    .fill(Color(UIColor.systemBackground))
                     .shadow(color: .black, radius: 3)
             )
             .padding(.top, 10)
@@ -48,14 +54,17 @@ struct LocationSearchView: View {
             /// List View
             ScrollView {
                 VStack(alignment: .leading) {
-                    ForEach(0..<7, id: \.self) { _ in
-                        LocationSearchResultCell()
+                    ForEach(viewModel.results, id: \.self) { result in
+                        if !result.title.isEmpty {
+                            LocationSearchResultCell(title: result.title, subtitle: result.subtitle)
+                        }
                     }
                 }
             }
         }
-        .background(.white)
+        .background(Color(UIColor.systemBackground))
         .navigationBarHidden(true)
+        .preferredColorScheme(.light)
     }
 }
 

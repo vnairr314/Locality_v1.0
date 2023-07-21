@@ -26,6 +26,7 @@ struct MapView: View {
                 LocationSearchView(isShowingSearchView: $isShowingSearchView)
             }
         }
+        .preferredColorScheme(.light)
     }
 }
 
